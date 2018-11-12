@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 public class WeatherServlet extends HttpServlet {
     
     private static final String WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather";
-    private static final String APPID = "b73a8ebfdd91898e037eee4a25386c4d";
+    private static final String APPID = "__YOUR_KEY__HERE__";
     
     private Client client;
     
