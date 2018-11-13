@@ -39,14 +39,7 @@ public class PurchaseOrderServlet extends HttpServlet {
         JsonArrayBuilder builder = Json.createArrayBuilder();
         for (PurchaseOrder po: result) {
             builder.add(po.toJson());
-        }
-        
-        TypedQuery<Integer> query2 = em.createNamedQuery(
-                "Integer.countPurchaseOrderByCustomer", Integer.class);
-        query2.setParameter("custId", custId);
-        List<Integer> result2 = query2.getResultList();
-        
-        System.out.println(">>> count: " + result2);
+        }                
         
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.setContentType(MediaType.APPLICATION_JSON);

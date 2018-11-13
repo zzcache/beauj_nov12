@@ -28,8 +28,8 @@ import javax.persistence.Transient;
         query = "select po from PurchaseOrder po where po.orderNum = :orderNum"
     ),
     @NamedQuery(
-        name = "Integer.countPurchaseOrderByCustomer",
-        query = "select sum(po) from PurchaseOrder po join po.customer c where c.customerId = :custId"
+        name = "ObjectArray.countPurchaseOrderByCustomers",       
+        query = "select c.customerId, COUNT(po) from PurchaseOrder po join po.customer c group by c.customerId"
     )
 })
 public class PurchaseOrder {
